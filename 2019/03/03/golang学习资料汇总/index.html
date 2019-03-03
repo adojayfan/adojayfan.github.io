@@ -4,8 +4,9 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="ssh remote host identification has changed, android">
-    <meta name="description" content="通过SSH连接服务器时，出现以下提示。12345678910111213@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@    WARNING: REMOTE HOST">
+    <meta name="keywords" content="golang学习资料汇总, android">
+    <meta name="description" content="go第三方框架、库集合：https://github.com/avelino/awesome-gowebsocket 处理百分并发：https://github.com/eranyanay/1m-go-websockets
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +14,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>ssh remote host identification has changed | 杜军参的小窝</title>
+    <title>golang学习资料汇总 | 杜军参的小窝</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -257,13 +258,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        ssh remote host identification has changed
+                        golang学习资料汇总
                     </div>
                 </div>
             </div>
@@ -366,7 +367,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-02-28
+                    2019-03-03
                 </div>
 
                 
@@ -382,10 +383,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>通过SSH连接服务器时，出现以下提示。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</span><br><span class="line">@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @</span><br><span class="line">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</span><br><span class="line">IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!</span><br><span class="line">Someone could be eavesdropping on you right now (man-in-the-middle attack)!</span><br><span class="line">It is also possible that a host key has just been changed.</span><br><span class="line">The fingerprint for the RSA key sent by the remote host is</span><br><span class="line">SHA256:uET4DUxKpJV0DOIYWOqqSpzFMru79AnUNkOvsnlp9/s.</span><br><span class="line">Please contact your system administrator.</span><br><span class="line">Add correct host key in /var/root/.ssh/known_hosts to get rid of this message.</span><br><span class="line">Offending RSA key in /var/root/.ssh/known_hosts:5</span><br><span class="line">RSA host key for 222.186.48.226 has changed and you have requested strict checking.</span><br><span class="line">Host key verification failed.</span><br></pre></td></tr></table></figure></p>
-<h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h3><p>服务器的私钥变了。需要在本机重新生成对应的公钥。</p>
-<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -R 远程主机ip</span><br><span class="line">#示例： ssh-keygen -R 202.172.32.110</span><br></pre></td></tr></table></figure>
-<p>重新连接服务器，会提示是否生成新的key.输入yes就可以了。</p>
+                <p>go第三方框架、库集合：<a href="https://github.com/avelino/awesome-go" target="_blank" rel="noopener">https://github.com/avelino/awesome-go</a><br>websocket 处理百分并发：<a href="https://github.com/eranyanay/1m-go-websockets" target="_blank" rel="noopener">https://github.com/eranyanay/1m-go-websockets</a></p>
 
             </div>
             <hr>
@@ -533,7 +531,7 @@
                     </span>
                     <a href="https://adojayfan.github.io" class="b-link-green">杜军参的小窝</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/02/28/ssh-remote-host-identification-has-changed/" class="b-link-green">ssh remote host identification has changed</a>
+                    <a href="/2019/03/03/golang学习资料汇总/" class="b-link-green">golang学习资料汇总</a>
                 </p>
             </div>
         </div>
@@ -556,7 +554,8 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2019/03/03/golang学习资料汇总/">
                     <div class="card-image">
@@ -571,9 +570,9 @@
                     <div class="summary">go第三方框架、库集合：https://github.com/avelino/awesome-gowebsocket 处理百分并发：https://github.com/eranyanay/1m-go-websockets
 </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-03
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-03
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
@@ -582,6 +581,7 @@
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -592,17 +592,17 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/02/28/mac安装hexo常见问题/">
+                <a href="/2019/02/28/ssh-remote-host-identification-has-changed/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="mac安装hexo常见问题">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="ssh remote host identification has changed">
                         
-                        <span class="card-title">mac安装hexo常见问题</span>
+                        <span class="card-title">ssh remote host identification has changed</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">安装hexo出现如下错误12345678910111213141516171819202122232425dujuncandeMBP:lib ado$ npm install -g hexo-clinpm WARN checkPermiss</div>
+                    <div class="summary">通过SSH连接服务器时，出现以下提示。12345678910111213@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@    WARNING: REMOTE HOST</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-28
