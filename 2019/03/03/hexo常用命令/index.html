@@ -6,13 +6,13 @@
     <meta charset="utf-8">
     <meta name="keywords" content="hexo常用命令, android">
     <meta name="description" content="hexo官方文档对新人实在是太不友好了，需要自己记一记。
-发布新文章$ hexo new post &amp;quot;文章标题&amp;quot;
+发布新文章$ hexo new post &#34;文章标题&#34;
 
 生成静态文件$ hexo generate
 #简写
 $ hexo g
 
-服务器安装服务器模块$ npm ">
+服务器安装服务器模块$ npm install he">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -35,7 +35,7 @@ $ hexo g
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-</head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -390,20 +390,20 @@ $ hexo g
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>hexo官方文档对新人实在是太不友好了，需要自己记一记。</p>
-<h3 id="发布新文章"><a href="#发布新文章" class="headerlink" title="发布新文章"></a>发布新文章</h3><pre><code class="bash">$ hexo new post &quot;文章标题&quot;
+<h3 id="发布新文章"><a href="#发布新文章" class="headerlink" title="发布新文章"></a>发布新文章</h3><pre class=" language-bash"><code class="language-bash">$ hexo new post <span class="token string">"文章标题"</span>
 </code></pre>
-<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><pre><code class="bash">$ hexo generate
-#简写
+<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate
+<span class="token comment" spellcheck="true">#简写</span>
 $ hexo g
 </code></pre>
-<h3 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h3><h4 id="安装服务器模块"><a href="#安装服务器模块" class="headerlink" title="安装服务器模块"></a>安装服务器模块</h4><pre><code class="bash">$ npm install hexo-server --save
+<h3 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h3><h4 id="安装服务器模块"><a href="#安装服务器模块" class="headerlink" title="安装服务器模块"></a>安装服务器模块</h4><pre class=" language-bash"><code class="language-bash">$ <span class="token function">npm</span> <span class="token function">install</span> hexo-server --save
 </code></pre>
-<h4 id="启动本地服务器"><a href="#启动本地服务器" class="headerlink" title="启动本地服务器"></a>启动本地服务器</h4><pre><code class="bash">$ hexo server
-#简写
+<h4 id="启动本地服务器"><a href="#启动本地服务器" class="headerlink" title="启动本地服务器"></a>启动本地服务器</h4><pre class=" language-bash"><code class="language-bash">$ hexo server
+<span class="token comment" spellcheck="true">#简写</span>
 $ hexo s
 </code></pre>
-<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><pre><code class="bash">$ hexo deploy
-#简写
+<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy
+<span class="token comment" spellcheck="true">#简写</span>
 $ hexo d
 </code></pre>
 
@@ -576,31 +576,33 @@ $ hexo d
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
-            </div>
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/03/03/hexo常用命令/">
+                <a href="/2019/03/07/git合并分支-解决冲突/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="hexo常用命令">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="git合并分支,解决冲突">
                         
-                        <span class="card-title">hexo常用命令</span>
+                        <span class="card-title">git合并分支,解决冲突</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">hexo官方文档对新人实在是太不友好了，需要自己记一记。
-发布新文章$ hexo new post &quot;文章标题&quot;
+                    <div class="summary">合并分支有2个分支。分支A，分支B。
 
-生成静态文件$ hexo generate
-#简写
-$ hexo g
+分支A合并到分支B#切换到分支B
+git checkout 分支B
+#合并分支A的代码
+git merge 分支A
 
-服务器安装服务器模块$ npm </div>
+
+分支B合并到分支A#切换到分支B
+git checkout 分支A
+#合并分支A</div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-03
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-07
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
@@ -609,7 +611,14 @@ $ hexo g
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/git/" target="_blank">
+                        <span class="chip bg-color">git</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
