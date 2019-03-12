@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Docker CenOS安装教程</title>
+      <link href="/2019/03/12/Docker-CenOS%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/"/>
+      <url>/2019/03/12/Docker-CenOS%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</url>
+      
+        <content type="html"><![CDATA[<h2 id="系统要求"><a href="#系统要求" class="headerlink" title="系统要求"></a>系统要求</h2><p>CentOS 7以上。</p><h2 id="卸载旧版本"><a href="#卸载旧版本" class="headerlink" title="卸载旧版本"></a>卸载旧版本</h2><p>如果以前安装过docker，请先删除旧版本。</p><pre class=" language-shell"><code class="language-shell">$ sudo yum remove docker \                  docker-client \                  docker-client-latest \                  docker-common \                  docker-latest \                  docker-latest-logrotate \                  docker-logrotate \                  docker-selinux \                  docker-engine-selinux \                  docker-engine</code></pre><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="安装方式"><a href="#安装方式" class="headerlink" title="安装方式"></a>安装方式</h3><p>Docker的安装方式有以下三种。</p><ol><li>添加Docker远程仓库，从仓库安装。（官方推荐）</li><li>RPM包安装，适合有经验的Linux用户。</li><li>脚本安装。适合测试环境和开发环境。</li></ol><h3 id="从仓库安装"><a href="#从仓库安装" class="headerlink" title="从仓库安装"></a>从仓库安装</h3><p>这里使用仓库安装，大部分用户都会使用这种安装方式。</p><ol><li>安装 yum-utils 工具包<pre class=" language-shell"><code class="language-shell">$ sudo yum install -y yum-utils \device-mapper-persistent-data \lvm2</code></pre></li><li><p>添加docker-ce的仓库地址</p><pre class=" language-shell"><code class="language-shell">$ sudo yum-config-manager \ --add-repo \https://download.docker.com/linux/centos/docker-ce.repo</code></pre><p>国内用户可以使用阿里云的docker镜像仓库：<a href="http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo" target="_blank" rel="noopener">http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</a></p></li><li><p>开始安装</p><pre class=" language-shell"><code class="language-shell">$ sudo yum install docker-ce</code></pre></li><li>启动docker服务<pre class=" language-shell"><code class="language-shell">$ sudo systemctl start docker</code></pre></li><li>运行测试Image，验证docker是否安装成功<pre class=" language-shell"><code class="language-shell">$ sudo docker run hello-world</code></pre>这条命令会下载一个测试Image,下载成功后会在容器内运行。运行后，会打印一些信息并退出，代表docker已经成功安装。</li></ol><p>参考：<a href="https://docs.docker.com/install/linux/docker-ce/centos/" target="_blank" rel="noopener">https://docs.docker.com/install/linux/docker-ce/centos/</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Docker centos </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Docker 常用命令</title>
       <link href="/2019/03/12/Docker-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
       <url>/2019/03/12/Docker-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
@@ -11,6 +30,12 @@
         <content type="html"><![CDATA[<h2 id="镜像-image"><a href="#镜像-image" class="headerlink" title="镜像(image)"></a>镜像(image)</h2><p>搜索仓库的镜像<br>docker search 镜像名</p><p>下载镜像<br>docker pull 镜像名</p><p>查看本地镜像<br>docker images</p><p>删除镜像<br>docker rmi 镜像id<br>注意：删除镜像前必须先删除容器才可以。</p><h2 id="容器-container"><a href="#容器-container" class="headerlink" title="容器(container)"></a>容器(container)</h2><p>运行<br>docker run 参数  镜像名<br>示例：</p><pre class=" language-shell"><code class="language-shell">$ docker run -d --name demo nginx::lastest</code></pre><p>查看运行的容器<br>docker ps [可带参数]<br>-a: 显示所有容器。</p><p>停止容器<br>docker stop 容器id</p><p>删除容器<br>docker rm 容器id</p>]]></content>
       
       
+      
+        <tags>
+            
+            <tag> Docker </tag>
+            
+        </tags>
       
     </entry>
     
