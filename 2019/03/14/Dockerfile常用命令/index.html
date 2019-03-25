@@ -4,18 +4,13 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="git合并分支,解决冲突, android">
-    <meta name="description" content="合并分支有2个分支。分支A，分支B。
+    <meta name="keywords" content="Dockerfile常用命令, android">
+    <meta name="description" content="一个最简单的go 项目的dockerfile
+FROM golang:latest
 
-分支A合并到分支B#切换到分支B
-git checkout 分支B
-#合并分支A的代码
-git merge 分支A
+MAINTAINER ado
 
-
-分支B合并到分支A#切换到分支B
-git checkout 分支A
-#合并分支A">
+RUN go get github.com/astaxie/beego &amp;amp;&amp;amp; go get github.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -23,7 +18,7 @@ git checkout 分支A
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>git合并分支,解决冲突 | 大牛进阶之路</title>
+    <title>Dockerfile常用命令 | 大牛进阶之路</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -267,13 +262,13 @@ git checkout 分支A
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        git合并分支,解决冲突
+                        Dockerfile常用命令
                     </div>
                 </div>
             </div>
@@ -365,8 +360,8 @@ git checkout 分支A
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/git/" target="_blank">
-                                <span class="chip bg-color">git</span>
+                            <a href="/tags/Dockerfile/" target="_blank">
+                                <span class="chip bg-color">Dockerfile</span>
                             </a>
                         
                     </div>
@@ -380,7 +375,7 @@ git checkout 分支A
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-03-07
+                    2019-03-14
                 </div>
 
                 
@@ -396,55 +391,24 @@ git checkout 分支A
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="合并分支"><a href="#合并分支" class="headerlink" title="合并分支"></a>合并分支</h2><p>有2个分支。分支A，分支B。</p>
-<ol>
-<li>分支A合并到分支B<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#切换到分支B</span>
-<span class="token function">git</span> checkout 分支B
-<span class="token comment" spellcheck="true">#合并分支A的代码</span>
-<span class="token function">git</span> merge 分支A
-</code></pre>
-</li>
-<li>分支B合并到分支A<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#切换到分支B</span>
-<span class="token function">git</span> checkout 分支A
-<span class="token comment" spellcheck="true">#合并分支A的代码</span>
-<span class="token function">git</span> merge 分支B
-</code></pre>
-</li>
-</ol>
-<h2 id="解决冲突"><a href="#解决冲突" class="headerlink" title="解决冲突"></a>解决冲突</h2><p>合并分支时，常常会遇到冲突.</p>
-<pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span> merge branchxxx
-Auto-merging 冲突的文件.xxx
-CONFLICT <span class="token punctuation">(</span>content<span class="token punctuation">)</span>: Merge conflict <span class="token keyword">in</span> 冲突的文件.xxx
-Automatic merge failed<span class="token punctuation">;</span> fix conflicts and <span class="token keyword">then</span> commit the result.
-</code></pre>
-<p>这是因为2个分支中同时改动了同样的位置。</p>
-<p>根据上面的冲突提示，可以看到是哪些文件的代码冲突了。</p>
-<p>如果冲突的文件太多，我们也可以使用git status来查看有哪些冲突的文件.<br>both modified后面的文件名就代表冲突的文件.</p>
-<pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span> status
-On branch master
-You have unmerged paths.
-  <span class="token punctuation">(</span>fix conflicts and run <span class="token string">"git commit"</span><span class="token punctuation">)</span>
+                <p>一个最简单的go 项目的dockerfile</p>
+<pre class=" language-bash"><code class="language-bash">FROM golang:latest
 
-Unmerged paths:
-  <span class="token punctuation">(</span>use <span class="token string">"git add &lt;file>..."</span> to mark resolution<span class="token punctuation">)</span>
+MAINTAINER ado
 
-        both modified:      index.html
+RUN go get github.com/astaxie/beego <span class="token operator">&amp;&amp;</span> go get github.com/beego/bee
 
-no changes added to commit <span class="token punctuation">(</span>use <span class="token string">"git add"</span> and/or <span class="token string">"git commit -a"</span><span class="token punctuation">)</span>
+EXPOSE 8080
+
+CMD <span class="token punctuation">[</span><span class="token string">"bee"</span>,<span class="token string">"run"</span><span class="token punctuation">]</span>
 </code></pre>
-<p>我们打开这些文件，会发现以下代码。</p>
-<pre><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
-&lt;div id=&quot;footer&quot;&gt;contact : email.support@github.com&lt;/div&gt;
-=======
-&lt;div id=&quot;footer&quot;&gt;
-  please contact us at support@github.com
-&lt;/div&gt;
-&gt;&gt;&gt;&gt;&gt;&gt;&gt; branchB
-</code></pre><p>在&lt;&lt;&lt;&lt;&lt;&lt; HEAD和======之间的内容，代表的是当前分支的代码。<br>在====== 和 &gt;&gt;&gt;&gt;&gt;&gt;&gt; branchB之间的内容，代表的是要合并分支的代码。</p>
-<p>可以根据需要决定需要保留的代码，最后删除&lt;&lt;&lt;&lt;&lt; ======= &gt;&gt;&gt;&gt;&gt;&gt;&gt;这些符号，保证代码正常运行。</p>
-<p>解决完所有冲突后，使用git add 将冲突的文件标记为已解决状态。<br>然后用git commit 完成这次合并提交。<br>最后git push 提交到远程仓库就可以了。</p>
-<p>参考：<a href="https://git-scm.com/book/zh/v1/Git-%E5%88%86%E6%94%AF-%E5%88%86%E6%94%AF%E7%9A%84%E6%96%B0%E5%BB%BA%E4%B8%8E%E5%90%88%E5%B9%B6" target="_blank" rel="noopener">https://git-scm.com/book/zh/v1/Git-%E5%88%86%E6%94%AF-%E5%88%86%E6%94%AF%E7%9A%84%E6%96%B0%E5%BB%BA%E4%B8%8E%E5%90%88%E5%B9%B6</a></p>
-
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><h3 id="FROM"><a href="#FROM" class="headerlink" title="FROM"></a>FROM</h3><p>FROM golang:latest<br>指定用哪个远程镜像来构建.FROM必须是Dockerfile的第一个命令。<br>一般都是开发语言的环境，比如java php python</p>
+<h3 id="MAINTAINER"><a href="#MAINTAINER" class="headerlink" title="MAINTAINER"></a>MAINTAINER</h3><p>声明作者，就像开发中的@author一样，一般放在FROM后面。</p>
+<h3 id="RUN"><a href="#RUN" class="headerlink" title="RUN"></a>RUN</h3><p>用来执行命令行的命令。<br>如果项目中引入了三方库，必须先下载三方库。</p>
+<h3 id="WORKDIR"><a href="#WORKDIR" class="headerlink" title="WORKDIR"></a>WORKDIR</h3><h3 id="EXPOSE"><a href="#EXPOSE" class="headerlink" title="EXPOSE"></a>EXPOSE</h3><p>暴露docker的指定端口，和外层通信</p>
+<h3 id="VOLUME"><a href="#VOLUME" class="headerlink" title="VOLUME"></a>VOLUME</h3><p>可以让容器访问宿主机上的目录</p>
+<pre><code>VOLUME [&quot;/home/project/&quot;]
+</code></pre>
             </div>
             <hr>
 
@@ -591,7 +555,7 @@ no changes added to commit <span class="token punctuation">(</span>use <span cla
                     </span>
                     <a href="https://adojayfan.github.io" class="b-link-green">大牛进阶之路</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/03/07/git合并分支-解决冲突/" class="b-link-green">git合并分支,解决冲突</a>
+                    <a href="/2019/03/14/Dockerfile常用命令/" class="b-link-green">Dockerfile常用命令</a>
                 </p>
             </div>
         </div>
@@ -616,24 +580,21 @@ no changes added to commit <span class="token punctuation">(</span>use <span cla
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/03/12/Docker-常用命令/">
+                <a href="/2019/03/25/更改drawableLeft、Right、Bottom、Top图片的大小/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="Docker 常用命令">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="更改drawableLeft、Right、Bottom、Top图片的大小">
                         
-                        <span class="card-title">Docker 常用命令</span>
+                        <span class="card-title">更改drawableLeft、Right、Bottom、Top图片的大小</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">启动服务systemctl docker start
-镜像(image)搜索仓库的镜像docker search 镜像名
-下载镜像docker pull 镜像名
-查看本地镜像docker images
-删除镜像docker rmi 镜像id</div>
+                    <div class="summary">默认情况下，在xml中为TextView设置drawableLeft、drawableRight、drawableTop、drawableBottom，图片的大小是根据图片的像素自动适配的。
+有时候这样显示出来的效果跟UI设计师出的图不一致</div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-12
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-25
                         </span>
                         <span class="publish-author">
                             
@@ -646,8 +607,8 @@ no changes added to commit <span class="token punctuation">(</span>use <span cla
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Docker/" target="_blank">
-                        <span class="chip bg-color">Docker</span>
+                    <a href="/tags/android/" target="_blank">
+                        <span class="chip bg-color">android</span>
                     </a>
                     
                 </div>
@@ -661,27 +622,24 @@ no changes added to commit <span class="token punctuation">(</span>use <span cla
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/03/03/hexo常用命令/">
+                <a href="/2019/03/12/Docker-CenOS安装教程/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="hexo常用命令">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="Docker CenOS安装教程">
                         
-                        <span class="card-title">hexo常用命令</span>
+                        <span class="card-title">Docker CenOS安装教程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">hexo官方文档对新人实在是太不友好了，需要自己记一记。
-发布新文章$ hexo new post "文章标题"
-
-生成静态文件$ hexo generate
-#简写
-$ hexo g
-
-服务器安装服务器模块$ npm install he</div>
+                    <div class="summary">系统要求CentOS 7以上。
+卸载旧版本如果以前安装过docker，请先删除旧版本。
+$ sudo yum remove docker \
+                  docker-client \
+               </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-03
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-12
                             </span>
                         <span class="publish-author">
                             
@@ -690,6 +648,14 @@ $ hexo g
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Docker-centos/" target="_blank">
+                        <span class="chip bg-color">Docker centos</span>
+                    </a>
+                    
                 </div>
                 
             </div>
