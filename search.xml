@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Android面试题整理(持续更新)</title>
+      <link href="/2019/04/26/Android%E9%9D%A2%E8%AF%95%E9%A2%98%E6%95%B4%E7%90%86/"/>
+      <url>/2019/04/26/Android%E9%9D%A2%E8%AF%95%E9%A2%98%E6%95%B4%E7%90%86/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Java基础"><a href="#Java基础" class="headerlink" title="Java基础"></a>Java基础</h2><ol><li>ArrayList实现原理(<a href="https://www.jianshu.com/p/e3e3f681e7b3" target="_blank" rel="noopener">https://www.jianshu.com/p/e3e3f681e7b3</a>)</li><li>HashMap实现原理</li></ol><h2 id="Java并发"><a href="#Java并发" class="headerlink" title="Java并发"></a>Java并发</h2><ol><li>阻塞队列和非阻塞队列</li><li>线程池</li><li>并发库</li></ol><h2 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h2><ul><li>Handler、Looper、MessageQueue</li><li>View绘制流程</li><li>事件分发拦截</li><li>性能优化(traceview、MAT)</li><li>ANR分析</li><li>AMS PMS WMS源码解析</li></ul><h2 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h2><ul><li>工厂模式(抽象工厂和简单工厂的区别)</li><li>观察者模式</li><li>建造者模式</li></ul><h2 id="JVM"><a href="#JVM" class="headerlink" title="JVM"></a>JVM</h2><ul><li>类加载机制</li><li>GC算法</li></ul><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><ul><li>排序<ul><li>冒泡排序</li><li>快速排序</li><li>选择排序</li></ul></li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 面试 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Android 将View的内容转换为图片</title>
       <link href="/2019/03/25/Android-%E5%B0%86View%E7%9A%84%E5%86%85%E5%AE%B9%E8%BD%AC%E6%8D%A2%E4%B8%BA%E5%9B%BE%E7%89%87/"/>
       <url>/2019/03/25/Android-%E5%B0%86View%E7%9A%84%E5%86%85%E5%AE%B9%E8%BD%AC%E6%8D%A2%E4%B8%BA%E5%9B%BE%E7%89%87/</url>
