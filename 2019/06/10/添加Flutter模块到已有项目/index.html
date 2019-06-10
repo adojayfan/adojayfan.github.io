@@ -4,14 +4,13 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Android 将View的内容转换为图片, android">
-    <meta name="description" content="有时候我们需要将app中某个控制的内容转换为图片保存起来。以下代码可以实现。
-    /**
-     * View转换为Bitmap图片
-     *
-     * @param view
-     * @return Bitmap
-  ">
+    <meta name="keywords" content="添加Flutter模块到已有项目(Android), android">
+    <meta name="description" content="创建Flutter模块#进入指定目录
+$ cd 
+#使用命令创建flutter模块,flutter_module是模块名
+$ flutter create -t module flutter_module
+
+主工程配置app的build.g">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Android 将View的内容转换为图片 | 大牛进阶之路</title>
+    <title>添加Flutter模块到已有项目(Android) | 大牛进阶之路</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -263,13 +262,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Android 将View的内容转换为图片
+                        添加Flutter模块到已有项目(Android)
                     </div>
                 </div>
             </div>
@@ -361,8 +360,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/android/" target="_blank">
-                                <span class="chip bg-color">android</span>
+                            <a href="/tags/Flutter/" target="_blank">
+                                <span class="chip bg-color">Flutter</span>
                             </a>
                         
                     </div>
@@ -376,7 +375,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-03-25
+                    2019-06-10
                 </div>
 
                 
@@ -392,23 +391,71 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>有时候我们需要将app中某个控制的内容转换为图片保存起来。<br>以下代码可以实现。</p>
-<pre class=" language-java"><code class="language-java">    <span class="token comment" spellcheck="true">/**
-     * View转换为Bitmap图片
-     *
-     * @param view
-     * @return Bitmap
-     */</span>
-    <span class="token keyword">public</span> Bitmap <span class="token function">convertViewToBitmap</span><span class="token punctuation">(</span>View view<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token comment" spellcheck="true">//创建Bitmap,最后一个参数代表图片的质量.</span>
-        Bitmap bitmap <span class="token operator">=</span> Bitmap<span class="token punctuation">.</span><span class="token function">createBitmap</span><span class="token punctuation">(</span>view<span class="token punctuation">.</span><span class="token function">getWidth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> view<span class="token punctuation">.</span><span class="token function">getHeight</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> Bitmap<span class="token punctuation">.</span>Config<span class="token punctuation">.</span>ARGB_8888<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">//创建Canvas，并传入Bitmap.</span>
-        Canvas canvas <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Canvas</span><span class="token punctuation">(</span>bitmap<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">//View把内容绘制到canvas上，同时保存在bitmap.</span>
-        view<span class="token punctuation">.</span><span class="token function">draw</span><span class="token punctuation">(</span>canvas<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> bitmap<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+                <h3 id="创建Flutter模块"><a href="#创建Flutter模块" class="headerlink" title="创建Flutter模块"></a>创建Flutter模块</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#进入指定目录</span>
+$ <span class="token function">cd</span> 
+<span class="token comment" spellcheck="true">#使用命令创建flutter模块,flutter_module是模块名</span>
+$ flutter create -t module flutter_module
 </code></pre>
+<h3 id="主工程配置"><a href="#主工程配置" class="headerlink" title="主工程配置"></a>主工程配置</h3><h4 id="app的build-gradle"><a href="#app的build-gradle" class="headerlink" title="app的build.gradle"></a>app的build.gradle</h4><pre><code>android{
+    ......
+    compileOptions {
+      sourceCompatibility 1.8
+      targetCompatibility 1.8
+    }    
+}
+
+dependencies {
+  implementation project(&#39;:flutter&#39;)
+}
+</code></pre><h4 id="settings-gradle"><a href="#settings-gradle" class="headerlink" title="settings.gradle"></a>settings.gradle</h4><pre><code>#原有的代码
+include &#39;:app&#39;
+#新增的代码                                     
+setBinding(new Binding([gradle: this]))                                
+evaluate(new File(                                                      
+  settingsDir.parentFile,
+  #flutter模块路径                                               
+  &#39;my_flutter/.android/include_flutter.groovy&#39;                          
+))                                                                      
+</code></pre><p>通过以上配置，sync后，在Android Studio目录结构中，就会多出一个flutter模块.</p>
+<h3 id="编写Widget"><a href="#编写Widget" class="headerlink" title="编写Widget"></a>编写Widget</h3><p>使用window.defaultRouteName()获取当前Android传入的标识符.<br>在main.dart中编写以下代码</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">import</span> <span class="token string">'dart:ui'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'package:flutter/material.dart'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token function">runApp</span><span class="token punctuation">(</span><span class="token function">_widgetForRoute</span><span class="token punctuation">(</span>window<span class="token punctuation">.</span>defaultRouteName<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//根据不同的标识符，返回不同的Widget.</span>
+Widget <span class="token function">_widgetForRoute</span><span class="token punctuation">(</span>String route<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">switch</span> <span class="token punctuation">(</span>route<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> <span class="token string">'route1'</span><span class="token operator">:</span>
+      <span class="token keyword">return</span> <span class="token function">SomeWidget</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">case</span> <span class="token string">'route2'</span><span class="token operator">:</span>
+      <span class="token keyword">return</span> <span class="token function">SomeOtherWidget</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">default</span><span class="token operator">:</span>
+      <span class="token keyword">return</span> <span class="token function">Center</span><span class="token punctuation">(</span>
+        child<span class="token operator">:</span> <span class="token function">Text</span><span class="token punctuation">(</span><span class="token string">'Unknown route: $route'</span><span class="token punctuation">,</span> textDirection<span class="token operator">:</span> TextDirection<span class="token punctuation">.</span>ltr<span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="Java代码获取Flutter的Widget"><a href="#Java代码获取Flutter的Widget" class="headerlink" title="Java代码获取Flutter的Widget"></a>Java代码获取Flutter的Widget</h3><p>使用Flutter.createView(Context,Lifecycle,string)获取widget.</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//获取Flutter Widget</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MainActivity</span> <span class="token keyword">extends</span> <span class="token class-name">AppCompatActivity</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">onCreate</span><span class="token punctuation">(</span>Bundle savedInstanceState<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">onCreate</span><span class="token punctuation">(</span>savedInstanceState<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">setContentView</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span>layout<span class="token punctuation">.</span>activity_main<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">//route1代表传入的标识符</span>
+        View flutterView <span class="token operator">=</span> Flutter<span class="token punctuation">.</span><span class="token function">createView</span><span class="token punctuation">(</span>
+            MainActivity<span class="token punctuation">.</span><span class="token keyword">this</span><span class="token punctuation">,</span>
+            <span class="token function">getLifecycle</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token string">"route1"</span>
+        <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>引用：<a href="https://github.com/flutter/flutter/wiki/Add-Flutter-to-existing-apps" target="_blank" rel="noopener">https://github.com/flutter/flutter/wiki/Add-Flutter-to-existing-apps</a></p>
 
             </div>
             <hr>
@@ -556,7 +603,7 @@
                     </span>
                     <a href="https://adojayfan.github.io" class="b-link-green">大牛进阶之路</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/03/25/Android-将View的内容转换为图片/" class="b-link-green">Android 将View的内容转换为图片</a>
+                    <a href="/2019/06/10/添加Flutter模块到已有项目/" class="b-link-green">添加Flutter模块到已有项目(Android)</a>
                 </p>
             </div>
         </div>
@@ -579,7 +626,55 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2019/06/10/添加Flutter模块到已有项目/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="添加Flutter模块到已有项目(Android)">
+                        
+                        <span class="card-title">添加Flutter模块到已有项目(Android)</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">创建Flutter模块#进入指定目录
+$ cd 
+#使用命令创建flutter模块,flutter_module是模块名
+$ flutter create -t module flutter_module
+
+主工程配置app的build.g</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-10
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-user fa-fw"></i>
+                            杜军参
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Flutter/" target="_blank">
+                        <span class="chip bg-color">Flutter</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2019/04/26/Android面试题整理/">
                     <div class="card-image">
@@ -600,9 +695,9 @@ ClassLoader，类加载机制
 数据结构
 s</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-26
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-26
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
@@ -616,48 +711,6 @@ s</div>
                     
                     <a href="/tags/面试/" target="_blank">
                         <span class="chip bg-color">面试</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2019/03/25/更改drawableLeft、Right、Bottom、Top图片的大小/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="更改drawableLeft、Right、Bottom、Top图片的大小">
-                        
-                        <span class="card-title">更改drawableLeft、Right、Bottom、Top图片的大小</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary">默认情况下，在xml中为TextView设置drawableLeft、drawableRight、drawableTop、drawableBottom，图片的大小是根据图片的像素自动适配的。
-有时候这样显示出来的效果跟UI设计师出的图不一致</div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-25
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-user fa-fw"></i>
-                            杜军参
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/android/" target="_blank">
-                        <span class="chip bg-color">android</span>
                     </a>
                     
                 </div>
