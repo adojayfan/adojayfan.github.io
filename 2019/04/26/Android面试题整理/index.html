@@ -8,11 +8,10 @@
     <meta name="description" content="Java基础
 ArrayList实现原理(https://www.jianshu.com/p/e3e3f681e7b3)
 HashMap实现原理
+链表实现原理
 值引用和引用传递的区别，在java中的应用
 ClassLoader，类加载机制
-
-数据结构
-s">
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -396,6 +395,7 @@ s">
                 <h2 id="Java基础"><a href="#Java基础" class="headerlink" title="Java基础"></a>Java基础</h2><ol>
 <li>ArrayList实现原理(<a href="https://www.jianshu.com/p/e3e3f681e7b3" target="_blank" rel="noopener">https://www.jianshu.com/p/e3e3f681e7b3</a>)</li>
 <li>HashMap实现原理</li>
+<li>链表实现原理</li>
 <li>值引用和引用传递的区别，在java中的应用</li>
 <li>ClassLoader，类加载机制</li>
 </ol>
@@ -412,9 +412,11 @@ s">
 <li>View绘制流程</li>
 <li>事件分发拦截</li>
 <li>屏幕适配方案</li>
-<li>性能优化(traceview、MAT)</li>
-<li>ANR分析</li>
+<li>性能优化(DDMS、traceview、MAT)</li>
+<li>App启动流程，Activity启动流程</li>
+<li>ANR分析(<a href="https://codezjx.com/2017/08/06/anr-trace-analytics/" target="_blank" rel="noopener">https://codezjx.com/2017/08/06/anr-trace-analytics/</a>)<br>  (adb pull /data/anr/traces.txt)</li>
 <li>AMS PMS WMS源码解析</li>
+<li>OkHttp原理</li>
 </ul>
 <h2 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h2><ul>
 <li>工厂模式(抽象工厂和简单工厂的区别)</li>
@@ -605,25 +607,21 @@ s">
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/06/10/添加Flutter模块到已有项目/">
+                <a href="/2019/05/24/Flutter中查看Android包名和IOS的bundle-id/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="添加Flutter模块到已有项目(Android)">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Flutter中查看Android包名和IOS的bundle id">
                         
-                        <span class="card-title">添加Flutter模块到已有项目(Android)</span>
+                        <span class="card-title">Flutter中查看Android包名和IOS的bundle id</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">创建Flutter模块#进入指定目录
-$ cd 
-#使用命令创建flutter模块,flutter_module是模块名
-$ flutter create -t module flutter_module
-
-主工程配置app的build.g</div>
+                    <div class="summary">Android包名打开android/app/main/AndroidManifest.xmlpackage后面的字符串就是包名.
+&lt;manifest xmlns:android="http://schemas.android.com</div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-10
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-24
                         </span>
                         <span class="publish-author">
                             
